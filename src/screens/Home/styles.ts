@@ -13,29 +13,8 @@ export const styles = StyleSheet.create({
   addTasks: {
     position: "absolute",
     top: 160,
-    flexDirection: "row",
     width: "100%",
     paddingHorizontal: 20,
-  },
-  input: {
-    flex: 1,
-    backgroundColor: "#262626",
-    height: 56,
-    fontSize: 16,
-    paddingLeft: 16,
-    borderRadius: 5,
-    marginRight: 6,
-    borderWidth: 1,
-    borderColor: "#0D0D0D",
-    color: "#F2F2F2",
-  },
-  buttonAdd: {
-    backgroundColor: "#1E6F9F",
-    width: 56,
-    height: 56,
-    borderRadius: 5,
-    alignItems: "center",
-    justifyContent: "center",
   },
   tasks: {
     flex: 8,
@@ -73,35 +52,5 @@ export const styles = StyleSheet.create({
   },
   tasksComponent: {
     marginTop: 56,
-  },
-  headerComponent: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginBottom: 20,
-  },
-  headerTitles: {
-    fontSize: 16,
-    fontWeight: "700",
-    color: "#4EA8DE",
-  },
-  qtyTasks: {
-    fontSize: 14,
-    fontWeight: "700",
-    color: "#D9D9D9",
-    backgroundColor: "#333333",
-    borderRadius: 15,
-    paddingHorizontal: 10,
-    paddingVertical: 2,
-    marginLeft: 8,
-  },
-  emptyComponent: {
-    borderTopWidth: 1,
-    borderTopColor: "#333333",
-    paddingTop: 48,
-    alignItems: "center",
-  },
-  emptyText: {
-    fontSize: 16,
-    color: "#808080",
   },
 });

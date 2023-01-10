@@ -5,10 +5,12 @@ import {
   Keyboard,
   StatusBar,
   Text,
-  TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
+import { Empty } from "../../components/Empty";
+import { Form } from "../../components/Form";
+import { Header } from "../../components/Header";
 import { styles } from "./styles";
 
 type Task = {
@@ -18,7 +20,6 @@ type Task = {
 
 export function Home() {
   const [keyboard, setKeyboard] = useState<boolean>(false);
-  const [focused, setFocused] = useState<boolean>(false);
   const [task, setTask] = useState<string>("");
   const [tasks, setTasks] = useState<Task[]>([]);
   const [completedTasks, setCompletedTasks] = useState<string[]>([]);
@@ -113,54 +114,16 @@ export function Home() {
           )}
           style={styles.tasksComponent}
           ListHeaderComponent={() => (
-            <View style={styles.headerComponent}>
-              <View style={{ flexDirection: "row" }}>
-                <Text style={styles.headerTitles}>Criadas</Text>
-                <Text style={styles.qtyTasks}>{tasks.length}</Text>
-              </View>
-              <View style={{ flexDirection: "row" }}>
-                <Text style={[styles.headerTitles, { color: "#8284FA" }]}>
-                  Concluídas
-                </Text>
-                <Text style={styles.qtyTasks}>{completedTasks.length}</Text>
-              </View>
-            </View>
+            <Header
+              qtyTasks={tasks.length}
+              qtyCompletedTasks={completedTasks.length}
+            />
           )}
-          ListEmptyComponent={() => (
-            <View style={styles.emptyComponent}>
-              <Image source={require("../../../assets/Clipboard.png")} />
-              <Text
-                style={[
-                  styles.emptyText,
-                  { fontWeight: "bold", marginTop: 16 },
-                ]}
-              >
-                Você ainda não tem tarefas cadastradas
-              </Text>
-              <Text style={styles.emptyText}>
-                Crie tarefas e organize seus itens a fazer
-              </Text>
-            </View>
-          )}
+          ListEmptyComponent={() => <Empty />}
         />
       </View>
       <View style={styles.addTasks}>
-        <TextInput
-          style={[styles.input, focused ? { borderColor: "#5E60CE" } : {}]}
-          value={task}
-          onChangeText={setTask}
-          placeholder="Adicione uma nova tarefa"
-          placeholderTextColor="#808080"
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
-        />
-        <TouchableOpacity
-          style={styles.buttonAdd}
-          activeOpacity={0.7}
-          onPress={() => handleAddTasks(task)}
-        >
-          <Image source={require("../../../assets/plus.png")} />
-        </TouchableOpacity>
+        <Form addTasks={handleAddTasks} task={task} onChange={setTask} />
       </View>
       <StatusBar barStyle={"light-content"} />
     </View>
