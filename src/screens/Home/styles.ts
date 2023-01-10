@@ -1,0 +1,107 @@
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  header: {
+    flex: 2.5,
+    backgroundColor: "#0D0D0D",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  addTasks: {
+    position: "absolute",
+    top: 160,
+    flexDirection: "row",
+    width: "100%",
+    paddingHorizontal: 20,
+  },
+  input: {
+    flex: 1,
+    backgroundColor: "#262626",
+    height: 56,
+    fontSize: 16,
+    paddingLeft: 16,
+    borderRadius: 5,
+    marginRight: 6,
+    borderWidth: 1,
+    borderColor: "#0D0D0D",
+    color: "#F2F2F2",
+  },
+  buttonAdd: {
+    backgroundColor: "#1E6F9F",
+    width: 56,
+    height: 56,
+    borderRadius: 5,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  tasks: {
+    flex: 8,
+    backgroundColor: "#1A1A1A",
+    paddingHorizontal: 24,
+  },
+  checkBox: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    borderColor: "#4EA8DE",
+    borderWidth: 2,
+    // marginRight: 12,
+  },
+  concluded: {
+    borderColor: "#5E60CE",
+    backgroundColor: "#5E60CE",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  taskItemComponent: {
+    flexDirection: "row",
+    marginBottom: 8,
+    backgroundColor: "#262626",
+    borderRadius: 5,
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 15,
+    paddingVertical: 12,
+  },
+  taskItem: {
+    fontSize: 16,
+    color: "#F2F2F2",
+    width: 235,
+  },
+  tasksComponent: {
+    marginTop: 56,
+  },
+  headerComponent: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 20,
+  },
+  headerTitles: {
+    fontSize: 16,
+    fontWeight: "700",
+    color: "#4EA8DE",
+  },
+  qtyTasks: {
+    fontSize: 14,
+    fontWeight: "700",
+    color: "#D9D9D9",
+    backgroundColor: "#333333",
+    borderRadius: 15,
+    paddingHorizontal: 10,
+    paddingVertical: 2,
+    marginLeft: 8,
+  },
+  emptyComponent: {
+    borderTopWidth: 1,
+    borderTopColor: "#333333",
+    paddingTop: 48,
+    alignItems: "center",
+  },
+  emptyText: {
+    fontSize: 16,
+    color: "#808080",
+  },
+});
